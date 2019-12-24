@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import Header from '../components/Header/Header'
 import {
     Container,
@@ -12,7 +13,7 @@ export default () => {
             <Header />
             <Container className="mt-3">
                 <Alert color="primary">
-                    Blog: Happy New Year 2020 >
+                    Blog: <Link to="/blog/happy-new-year-2020">Happy New Year 2020 ></Link>
                 </Alert>
                 <div className="layer mt-4">
                     <h1 style={{ fontWeight: "bold" }}>Leaning skill technology</h1>

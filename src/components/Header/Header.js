@@ -31,7 +31,7 @@ export default () => {
                             <NavLink href="/documents">เอกสาร</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/blogs">บทความ</NavLink>
+                            <NavLink href="/blog">บทความ</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="/about">เกี่ยวกับ</NavLink>

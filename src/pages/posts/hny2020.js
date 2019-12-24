@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import Header from '../components/Header/Header'
+import Header from '../../components/Header/Header'
 import { Container } from 'reactstrap'
-import bestculling from '../images/bestculling.jpg'
+import bestculling from '../../images/bestculling.jpg'
+import hny from '../../images/hny.jpg'
 
 export default () => {
     return (
@@ -15,12 +16,7 @@ export default () => {
                         <img src={bestculling} className="avatar" />
                         <span>BESTCULLING | DECEMBER 25, 2019</span>
                     </div>
-                    <p>
-                        With the Stencil One release behind us, we’re seeing developers build lots of successful Stencil-based web components. Now that the dust has settled, we realized it was time to talk about what’s next for the future of the project.
-                    </p>
-                    <Link to="/blog/happy-new-year-2020">
-                            อ่านเพิ่มเติม
-                    </Link>
+                    <img src={hny} className="article mt-4"/>
                 </div>
             </Container>
 
