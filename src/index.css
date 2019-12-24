@@ -13,16 +13,41 @@
 
 .layer{
   max-width: 620px;
-  margin-top: 50px;
   font-size: 1em;
   margin-left: 25px;
+}
+
+.blog{
+  max-width: 600px;
+  margin: auto;
+  margin-top: 100px;
+}
+.blog h1{
+  font-weight: bold;
+  font-size: 1.8em;
+}
+.blog span{
+  font-size: .8em;
+}
+.blog p{
+  font-size: 1em;
+}
+.avatar{
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  flex: 0 0 24px;
+  border-radius: 12px;
+}
+.profile{
+  margin: 15px;
 }
 @media (max-width: 400px) {
   .layer {
     text-align: center;
     margin-left: 0;
   }
-  #root .navbar-brand {
-    margin-left: 60px;
+  .blog{
+    margin-top: 50px;
   }
 }
