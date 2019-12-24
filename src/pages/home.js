@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import Header from '../components/Header/Header'
-import logo from '../images/touchmylike_logo.png'
 import { Container } from 'reactstrap'
 
 export default () => {
