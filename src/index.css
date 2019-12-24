@@ -20,6 +20,7 @@
 @media (max-width: 400px) {
   .layer {
     text-align: center;
+    margin-left: 0;
   }
   #root .navbar-brand {
     margin-left: 60px;
