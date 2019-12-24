@@ -21,20 +21,20 @@ export default () => {
         <Container>
             <Navbar light expand="md">
                 <NavbarBrand href="/" style={{color: "#000000"}}>
-                    <img src={logo} width="50"/>
+                    <img src={logo} width="40"/>
                     Touchmylike
                 </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink href="/components/">เอกสาร</NavLink>
+                            <NavLink href="/documents">เอกสาร</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">บทความ</NavLink>
+                            <NavLink href="/blogs">บทความ</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">เกี่ยวกับ</NavLink>
+                            <NavLink href="/about">เกี่ยวกับ</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>

@@ -12,6 +12,7 @@
 }
 
 .layer{
+  max-width: 620px;
   margin-top: 50px;
   font-size: 1em;
   margin-left: 25px;
@@ -19,5 +20,8 @@
 @media (max-width: 400px) {
   .layer {
     text-align: center;
+  }
+  #root .navbar-brand {
+    margin-left: 60px;
   }
 }
