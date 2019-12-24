@@ -11,14 +11,11 @@
   font-size: .8em;
 }
 
-.main {
-  position: absolute;
-  margin-top: -150px;
-  width: 700px;
-  margin-left: 400px;
-  opacity: .1;
-}
-
 .layer{
-  margin-top: 100px;
+  margin-top: 50px;
+}
+@media (max-width: 400px) {
+  .layer {
+    text-align: center;
+  }
 }

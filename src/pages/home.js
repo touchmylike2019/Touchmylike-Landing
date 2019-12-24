@@ -8,7 +8,6 @@ export default () => {
         <Fragment>
             <Header />
             <Container>
-                <img src={logo} className="main" />
                 <div className="layer">
                     <h1>Build. Distribute. Adopt.</h1>
                     <p>
