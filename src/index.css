@@ -46,6 +46,15 @@
 .article {
   width: 100%;
 }
+.docs{
+  max-width: 600px;
+  margin: auto;
+  margin-top: 100px;
+}
+.docs h1{
+  font-weight: bold;
+  font-size: 1.8em;
+}
 @media (max-width: 400px) {
   .layer {
     text-align: center;
