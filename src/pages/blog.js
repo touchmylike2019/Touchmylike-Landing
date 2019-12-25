@@ -16,7 +16,7 @@ export default () => {
                         <span>BESTCULLING | DECEMBER 25, 2019</span>
                     </div>
                     <p>
-                        With the Stencil One release behind us, we’re seeing developers build lots of successful Stencil-based web components. Now that the dust has settled, we realized it was time to talk about what’s next for the future of the project.
+                        <span>อาจเป็นพวกคุณทุกคนจะรู้สึกถึงความคิดถึงเกี่ยวกับการผ่านไปในปี 2020 ไม่ว่าเราจะพูดถึงชีวิตการทำงานและชีวิตส่วนตัวของคุณ ตอนนี้สิ่งต่างๆส่วนใหญ่เปลี่ยนไป ดังนั้นมาลองใช้ความรู้สึกนั้นกับเราและเข้าสู่ปีใหม่ปี 2020</span>
                     </p>
                     <Link to="/blog/happy-new-year-2020">
                             อ่านเพิ่มเติม

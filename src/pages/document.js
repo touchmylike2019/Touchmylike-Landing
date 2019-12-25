@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import Header from '../components/Header/Header'
 import {
     Container,
@@ -15,7 +16,7 @@ export default () => {
             <Header />
             <Container>
                 <div className="docs">
-                    <h1>เอกสาร</h1>
+                    <h1 style={{textAlign: "center"}}>เอกสาร</h1>
                     <Row>
                         <Col xs="12">
                             <Card className="mt-4">
@@ -23,7 +24,7 @@ export default () => {
                                 <CardBody>
                                     <CardTitle className="font-weight-bold">C++</CardTitle>
                                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                                    <Button>อ่านเพิ่มเติม</Button>
+                                    <Link to="/documents/cpp"><Button>อ่านเพิ่มเติม</Button></Link>
                                 </CardBody>
                             </Card>
                         </Col>
@@ -33,7 +34,7 @@ export default () => {
                                 <CardBody>
                                     <CardTitle className="font-weight-bold">SFML</CardTitle>
                                     <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                                    <Button>อ่านเพิ่มเติม</Button>
+                                    <Link to="/documents/sfml"><Button>อ่านเพิ่มเติม</Button></Link>
                                 </CardBody>
                             </Card>
                         </Col>

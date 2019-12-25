@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
-import Header from '../components/Header/Header'
-import { Container } from 'reactstrap'
+import Header from '../../components/Header/Header'
+import {
+    Container
+} from 'reactstrap'
 
 export default () => {
     return (
@@ -8,7 +10,7 @@ export default () => {
             <Header />
             <Container>
                 <div className="docs">
-                    <h1>มาม่า...</h1>
+                    <h2 style={{textAlign: "center"}}>กำลังดำเนินการ...</h2>
                 </div>
             </Container>
         </Fragment>

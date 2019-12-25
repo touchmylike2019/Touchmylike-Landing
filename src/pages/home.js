@@ -20,11 +20,11 @@ export default () => {
                     <p className="mt-4">
                         ในโลกปัจจุบันเทคโนโลยีนั้นเปลี่ยนอยู่ทุกวัน ฉะนั้นเเล้วเราจึงต้องพัฒนาทักษะตนเองอยู่เสมอ เพื่อพร้อมต่อการเปลี่ยนเเปลงของโลกยุคใหม่
                     </p>
-                    <Button color="primary" className="mt-4 p-3" style={{ width: "100%", fontWeight: "bold" }}>เริ่มกันเลย</Button>
-                    <Button className="mt-4 p-3"
+                    <Link to="/documents"><Button color="primary" className="mt-4 p-3" style={{ width: "100%", fontWeight: "bold" }}>เริ่มกันเลย</Button></Link>
+                    <Link to="/about"><Button className="mt-4 p-3"
                         style={{ color: "rgb(76,72,255)", width: "100%", background: "#FFF", border: "none", boxShadow: "0 0 5px rgba(0, 0, 0, 0.15)", fontWeight: "bold" }}>
                         Touchmylike คืออะไร?
-                    </Button>
+                    </Button></Link>
                 </div>
             </Container>
         </Fragment>
