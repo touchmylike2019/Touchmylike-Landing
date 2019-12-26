@@ -8,6 +8,9 @@ import About from './pages/about'
 import CPP from './pages/docs/cpp'
 import SFML from './pages/docs/sfml'
 import Structure from './pages/cpp/structure'
+import Login from './pages/login'
+import Signup from './pages/signup'
+import Account from './pages/account'
 
 export default () => {
     return (
@@ -21,6 +24,9 @@ export default () => {
                 <Route path="/blog" component={Blog} exact/>
                 <Route path="/blog/happy-new-year-2020" component={HNY2020} />
                 <Route path="/about" component={About} />
+                <Route path="/login" component={Login} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/account" component={Account} />
             </Switch>
         </BrowserRouter>
     )

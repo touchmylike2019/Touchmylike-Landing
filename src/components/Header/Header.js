@@ -36,6 +36,15 @@ export default () => {
                         <NavItem>
                             <NavLink href="/about">เกี่ยวกับ</NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink href="/account">บัญชีผู้ใช้</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/login">เข้าสู่ระบบ</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/signup">สมัครสมาชิก</NavLink>
+                        </NavItem>
                     </Nav>
                 </Collapse>
             </Navbar>

@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import Header from '../../components/Header/Header'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { vs } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import {
     Container,
     Row,

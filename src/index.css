@@ -55,6 +55,13 @@
   font-weight: bold;
   font-size: 1.8em;
 }
+.login {
+  margin-top: 100px;
+  text-align: center;
+}
+.account{
+  margin-top: 100px;
+}
 @media (max-width: 400px) {
   .layer {
     text-align: center;
@@ -65,5 +72,17 @@
   }
   .docs{
     margin-top: 50px;
+  }
+  .login{
+    margin-top: 50px;
+  }
+  .account{
+    margin-top: 50px;
+  }
+  .account p{
+    margin-bottom: 0;
+  }
+  .edit-profile{
+    width: 100%;
   }
 }
