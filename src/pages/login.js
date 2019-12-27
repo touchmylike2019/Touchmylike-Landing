@@ -1,5 +1,8 @@
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
+import { userLoginRequest } from '../store/actions/usersActions'
 import Header from '../components/Header/Header'
 import {
     Container,
@@ -9,16 +12,48 @@ import {
 } from 'reactstrap'
 import account from '../font-awesome/user-circle-solid.svg'
 
-export default () => {
+const mapStateToProps = state => {
+    return {
+        isAuthenticated: state.users.isAuthenticated
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        userLoginRequest: (userLoginDetails) => dispatch(userLoginRequest(userLoginDetails))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(({ history, userLoginRequest }) => {
 
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
 
-    const handleForm = e => {
+    let el_username, el_password
+
+    const handleForm = async e => {
         e.preventDefault()
-        toggle()
+        const userCredentials = {
+            username: el_username.value,
+            password: el_password.value
+        }
+
+        try {
+            const check = await userLoginRequest(userCredentials)
+            if(check.errors) {
+                toggle()
+            }else {
+                history.push('/')
+            }
+          } catch (error) {
+            console.error(error)
+          }
     }
 
+
+    // if(isAuthenticated) {
+    //     return <Redirect to="/" />
+    // }
     return (
         <Fragment>
             <Header />
@@ -27,10 +62,10 @@ export default () => {
                     <img width="150px" src={account} alt="account" />
                     <Form className="mt-5" onSubmit={handleForm}>
                         <FormGroup>
-                            <Input placeholder="username" />
+                            <Input type="text" placeholder="username" innerRef={el => el_username = el}/>
                         </FormGroup>
                         <FormGroup className="mt-4">
-                            <Input type="password" placeholder="password" />
+                            <Input type="password" placeholder="password" innerRef={el => el_password = el}/>
                         </FormGroup>
                         <FormGroup className="mt-4">
                             <Button>เข้าสู่ระบบ</Button>
@@ -42,11 +77,11 @@ export default () => {
                     <Modal isOpen={modal} fade={false} toggle={toggle} className="mt-5">
                         <ModalHeader toggle={toggle}>เเจ้งเตือน</ModalHeader>
                         <ModalBody>
-                            <p style={{color: "red"}}>ขออภัยผู้ใช้งาน, ขณะนี้ทางทีมงานกำลังเร่งดำเนินการอัพเดตระบบฐานข้อมูลซึ่งขณะนี้ยังไม่สามารถเข้าสู่ระบบได้</p>
+                            <p style={{color: "red"}}>username หรือ password ไม่ถูกต้อง, กรุณากรอกใหม่อีกครั้ง</p>
                     </ModalBody>
                     </Modal>
                 </div>
             </Container>
         </Fragment>
     )
-}
+})
