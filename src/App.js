@@ -11,6 +11,7 @@ import Structure from './pages/cpp/structure'
 import Login from './pages/login'
 import Signup from './pages/signup'
 import Account from './pages/account'
+import Calendar from './pages/calendar'
 
 export default () => {
     return (
@@ -27,6 +28,7 @@ export default () => {
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/account" component={Account} />
+                <Route path="/calendar" component={Calendar} />
             </Switch>
         </BrowserRouter>
     )

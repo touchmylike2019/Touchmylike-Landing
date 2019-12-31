@@ -11,6 +11,10 @@
   font-size: .8em;
 }
 
+#root .btn {
+  border-radius: 50px;
+}
+
 .layer{
   max-width: 620px;
   font-size: 1em;
@@ -59,6 +63,9 @@
   margin-top: 100px;
   text-align: center;
 }
+.about {
+  margin-top: 100px;
+}
 .account{
   margin-top: 100px;
 }
@@ -84,5 +91,8 @@
   }
   .edit-profile{
     width: 100%;
+  }
+  .about {
+    margin-top: 50px;
   }
 }
