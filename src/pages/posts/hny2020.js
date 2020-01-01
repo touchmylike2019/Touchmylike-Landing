@@ -15,7 +15,7 @@ export default () => {
                         <img src={bestculling} className="avatar" alt="happy new year 2020" />
                         <span>BESTCULLING | DECEMBER 25, 2019</span>
                     </div>
-                    <img src={hny} className="article mt-4" />
+                    <img src={hny} className="article mt-4" alt="hny2020"/>
                     <p className="mt-5">
                         <span style={{marginLeft: "40px"}}>อาจเป็นพวกคุณทุกคนจะรู้สึกถึงความคิดถึงเกี่ยวกับการผ่านไปในปี 2020 ไม่ว่าเราจะพูดถึงชีวิตการทำงานและชีวิตส่วนตัวของคุณ ตอนนี้สิ่งต่างๆส่วนใหญ่เปลี่ยนไป ดังนั้นมาลองใช้ความรู้สึกนั้นกับเราและเข้าสู่ปีใหม่ปี 2020
     ความปรารถนาปีใหม่พิเศษสำหรับเพื่อนที่พิเศษมากมาในวิธีที่พิเศษมากการขอให้มีความสุขปีใหม่ 2020 ในวันที่พิเศษมาก!

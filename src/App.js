@@ -7,6 +7,7 @@ import HNY2020 from './pages/posts/hny2020'
 import About from './pages/about'
 import CPP from './pages/docs/cpp'
 import SFML from './pages/docs/sfml'
+import MONGODB from './pages/docs/mongodb'
 import Structure from './pages/cpp/structure'
 import Login from './pages/login'
 import Signup from './pages/signup'
@@ -22,6 +23,7 @@ export default () => {
                 <Route path="/documents/cpp" component={CPP} exact/>
                 <Route path="/documents/cpp/structure" component={Structure} />
                 <Route path="/documents/sfml" component={SFML} />
+                <Route path="/documents/mongodb" component={MONGODB} exact/>
                 <Route path="/blog" component={Blog} exact/>
                 <Route path="/blog/happy-new-year-2020" component={HNY2020} />
                 <Route path="/about" component={About} />

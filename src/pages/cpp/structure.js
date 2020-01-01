@@ -9,7 +9,6 @@ import {
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 export default () => {
-    const codeString = ''
     return (
         <Fragment>
             <Header />

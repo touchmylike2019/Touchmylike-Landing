@@ -8,7 +8,7 @@ export default () => {
         <Fragment>
             <Header />
             <Container>
-                <di className="about">
+                <div className="about">
                     <Row>
                         <Col xl="5" md="5">
                             <img width="100%" src={touchmylike} alt="touchmylike" />
@@ -17,7 +17,7 @@ export default () => {
                             <p className="mt-5">เราเป็นเพียงคนกลุ่มเล็กๆ ที่ต้องการศึกษาเเละพัฒนาเทคโนโลยี เราจึงสร้าง web application นี้เพื่อมีไว้เเบ่งปันข้อมูลซึ่งกันเเละกัน เเละ นำความรู้มาผลิตเป็นผลงานออกมา</p>
                         </Col>
                     </Row>
-                </di>
+                </div>
             </Container>
         </Fragment>
     )

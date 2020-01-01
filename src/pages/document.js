@@ -5,10 +5,12 @@ import {
     Container,
     Row, Col,
     Card, CardImg, CardText, CardBody,
-    CardTitle, Button
+    CardTitle
 } from 'reactstrap'
 import cpp from '../images/cpp.png'
 import sfml from '../images/sfml.png'
+import mongodb from '../images/mongodb.png'
+import Documents from '../components/documents/Documents'
 
 export default () => {
     return (
@@ -16,28 +18,11 @@ export default () => {
             <Header />
             <Container>
                 <div className="docs">
-                    <h1 style={{textAlign: "center"}}>เอกสาร</h1>
+                    <h1 style={{ textAlign: "center" }}>เอกสาร</h1>
                     <Row>
-                        <Col xs="12">
-                            <Card className="mt-4">
-                                <CardImg top width="100%" src={cpp} alt="C++" />
-                                <CardBody>
-                                    <CardTitle className="font-weight-bold">C++</CardTitle>
-                                    <CardText>These tutorials explain the C++ language from its basics up to the newest features introduced by C++11. Chapters have a practical orientation, with example programs in all sections to start practicing what is being explained right away.</CardText>
-                                    <Link to="/documents/cpp"><Button>อ่านเพิ่มเติม</Button></Link>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col xs="12">
-                            <Card className="mt-4">
-                                <CardImg top width="100%" src={sfml} alt="sfml" />
-                                <CardBody>
-                                    <CardTitle className="font-weight-bold">SFML</CardTitle>
-                                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                                    <Link to="/documents/sfml"><Button>อ่านเพิ่มเติม</Button></Link>
-                                </CardBody>
-                            </Card>
-                        </Col>
+                        <Documents link="/documents/mongodb" location={mongodb} title="MongoDB" category="Database" />
+                        <Documents link="/documents/cpp" location={cpp} title="C++" category="Programming Language" />
+                        <Documents link="/documents/sfml" location={sfml} title="SFML" category="Library/Framework" />
                     </Row>
                 </div>
             </Container>
