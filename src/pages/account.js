@@ -32,7 +32,7 @@ export default connect(mapStateToProps)(({ authenticatedUsername }) => {
                 <div className="account">
                     <Row>
                         <Col>
-                            <img width="150px" src={account} alt="account" />
+                            <img width="120px" src={account} alt="account" />
                         </Col>
                         <Col style={{ marginTop: "20px" }}>
                             <h2><b>{authenticatedUsername}</b></h2>
@@ -40,11 +40,19 @@ export default connect(mapStateToProps)(({ authenticatedUsername }) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Button className="edit-profile mt-4 ml-3" onClick={toggle}>เเก้ไขโปรไฟล์</Button>
-                        <Button className="edit-profile mt-4 ml-3">เพิ่มข้อมูลงาน</Button> 
+                        <Button 
+                            style={{ color: "rgb(76,72,255)", background: "#FFF", border: "none", boxShadow: "0 0 5px rgba(0, 0, 0, 0.15)", fontWeight: "bold" }}
+                            className="edit-profile mt-4" 
+                            onClick={toggle}>เเก้ไขโปรไฟล์
+                        </Button>
+                        <Button 
+                            className="edit-profile mt-4"
+                            style={{ color: "rgb(76,72,255)", background: "#FFF", border: "none", boxShadow: "0 0 5px rgba(0, 0, 0, 0.15)", fontWeight: "bold" }}>
+                                เพิ่มข้อมูลงาน
+                            </Button> 
                     </Row>
                     <Row>
-                        <Link to="/calendar"><Button color="success" className="edit-profile mt-4 ml-3">คิวงาน</Button></Link>
+                        <Link to="/calendar"><Button color="success" className="edit-profile mt-4">คิวงาน</Button></Link>
                     </Row>
                 </div>
                 <div>

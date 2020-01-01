@@ -1,2 +1,10 @@
 @import '~@fullcalendar/core/main.css';
 @import '~@fullcalendar/daygrid/main.css';
+
+#root .fc-toolbar {
+    text-align: center;
+    display: block;
+}
+#root .fc-left {
+    margin-bottom: 10px;
+}

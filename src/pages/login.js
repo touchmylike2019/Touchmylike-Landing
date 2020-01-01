@@ -59,7 +59,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ history, userLogi
             <Header />
             <Container>
                 <div className="login">
-                    <img width="150px" src={account} alt="account" />
+                    <img width="120px" src={account} alt="account" />
                     <Form className="mt-5" onSubmit={handleForm}>
                         <FormGroup>
                             <Input type="text" placeholder="username" innerRef={el => el_username = el}/>
