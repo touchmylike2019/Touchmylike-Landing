@@ -46,3 +46,25 @@ export const userLogoutRequest = () => {
         dispatch({ type: actionTypes.LOGOUT_USER })
     }
 }
+
+export const showUserStatus = (id) => {
+    return dispatch => {
+        return fetch(`https://test0heroku.herokuapp.com/api/users/show_status/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                return data
+            })
+    }
+}
+
+export const userUpdateStatus = (id, userStatusDetails) => {
+    return dispatch => {
+        return fetch(`https://test0heroku.herokuapp.com/api/users/update_status/${id}`, {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'put',
+            body: JSON.stringify(userStatusDetails)
+        })
+    }
+}

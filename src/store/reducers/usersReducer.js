@@ -15,7 +15,8 @@ const validCredentials = () => {
 
 const initialState = {
     isAuthenticated: validCredentials(),
-    authenticatedUsername: validCredentials() === false ? '' : jwt.decode(localStorage.getItem('jwtToken')).username
+    authenticatedUsername: validCredentials() === false ? '' : jwt.decode(localStorage.getItem('jwtToken')).username,
+    status: ''
 }
 
 const reducer = (state = initialState, action) => {

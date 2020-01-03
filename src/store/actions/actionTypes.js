@@ -1,2 +1,4 @@
 export const LOGIN_SUCCESSFUL = 'LOGIN_SUCCESSFUL'
 export const LOGOUT_USER = 'LOGOUT_USER'
+
+export const SHOW_STATUS = 'SHOW_STATUS' 

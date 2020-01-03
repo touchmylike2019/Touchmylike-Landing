@@ -1,6 +1,7 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { userUpdateStatus, showUserStatus } from '../store/actions/usersActions'
 import Header from '../components/Header/Header'
 import {
     Container,
@@ -16,14 +17,39 @@ const mapStateToProps = state => {
         authenticatedUsername: state.users.authenticatedUsername
     }
 }
+const mapDispatchToProps = dispatch => {
+    return {
+        userUpdateStatus: (id, userStatusDetails) => dispatch(userUpdateStatus(id, userStatusDetails)),
+        showUserStatus: (id) => dispatch(showUserStatus(id))
+    }
+}
 
-export default connect(mapStateToProps)(({ authenticatedUsername }) => {
 
+export default connect(mapStateToProps, mapDispatchToProps)(({ authenticatedUsername, userUpdateStatus, showUserStatus }) => {
+
+    let el_status
     const [modal, setModal] = useState(false)
     const [modal2, setModal2] = useState(false)
     const toggleStatus = () => setModal(!modal)
     const toggleWork = () => setModal2(!modal2)
-    const [status, setStatus] = useState("สวัสดีปีใหม่ค้าบบ !!!")
+    const [status, setStatus] = useState("")
+
+    useEffect(() => {
+        const fetctStatus = async () => {
+            const status_message = await showUserStatus(authenticatedUsername)
+            setStatus(status_message)
+        }
+        fetctStatus()
+    })
+
+    const handleForm = async e => {
+        e.preventDefault()
+        try {
+            await userUpdateStatus(authenticatedUsername, { status_message: el_status.value })
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
     return (
         <Fragment>
@@ -60,10 +86,14 @@ export default connect(mapStateToProps)(({ authenticatedUsername }) => {
                     <Modal isOpen={modal} className="mt-5">
                         <ModalHeader>เเก้ไขโปรไฟล์</ModalHeader>
                         <ModalBody>
-                            <Input type="text" placeholder="เเก้ไขสถานะ" innerRef={el => el = status} />
+                            <Form>
+                                <FormGroup>
+                                    <Input type="text" name="status_message" placeholder="เเก้ไขสถานะ" innerRef={el => el_status = el} />
+                                </FormGroup>
+                            </Form>
                         </ModalBody>
                         <ModalFooter>
-                            <Button color="primary" onClick={toggleStatus}>ตกลง</Button>{' '}
+                            <Button onClick={handleForm} color="primary">ตกลง</Button>{' '}
                             <Button color="danger" onClick={toggleStatus}>ยกเลิก</Button>
                         </ModalFooter>
                     </Modal>
@@ -74,7 +104,7 @@ export default connect(mapStateToProps)(({ authenticatedUsername }) => {
                         <ModalBody>
                             <Form>
                                 <FormGroup>
-                                    <Input type="text" placeholder="ชื่อเรื่อง" innerRef={el => el = status} />
+                                    <Input type="text" placeholder="ชื่อเรื่อง" />
                                 </FormGroup>
                                 <FormGroup>
                                     <Label>การเข้าถึง</Label>
