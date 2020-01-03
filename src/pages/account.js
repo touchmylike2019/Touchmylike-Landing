@@ -46,6 +46,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ authenticatedUser
         e.preventDefault()
         try {
             await userUpdateStatus(authenticatedUsername, { status_message: el_status.value })
+            toggleStatus()
         } catch (error) {
             console.error(error)
         }
