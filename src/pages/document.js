@@ -1,11 +1,8 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
 import Header from '../components/Header/Header'
 import {
     Container,
-    Row, Col,
-    Card, CardImg, CardText, CardBody,
-    CardTitle
+    Row
 } from 'reactstrap'
 import cpp from '../images/cpp.png'
 import sfml from '../images/sfml.png'
