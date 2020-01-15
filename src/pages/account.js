@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { userUpdateStatus, showUserStatus } from '../store/actions/usersActions'
 import { userLogoutRequest } from '../store/actions/usersActions'
@@ -58,26 +58,11 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ isAuthenticated, 
             console.error(error)
         }
     }
-    const handleWork = async e => {
-        e.preventDefault()
-        try {
-            await setWork(prevState => {
-                return [
-                    prevState,
-                    {
-                        article: el_article.value,
-                        option: el_option.value
-                    }]
-            })
-        }
-        catch (err) {
-            console.log(err)
-        }
-    }
+
 
     if (isAuthenticated !== true) {
         return (
-            <Redirect to="/"/>
+            <Redirect to="/" />
         )
     }
 
@@ -96,26 +81,35 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ isAuthenticated, 
                         </Col>
                     </Row>
                     <Row>
-                        <Button
-                            style={{ color: "rgb(76,72,255)", background: "#FFF", border: "none", boxShadow: "0 0 5px rgba(0, 0, 0, 0.15)", fontWeight: "bold" }}
-                            className="edit-profile mt-4"
-                            onClick={toggleStatus}>เเก้ไขโปรไฟล์
+                        <Col>
+                            <Button
+                                style={{ color: "rgb(76,72,255)", background: "#FFF", border: "none", boxShadow: "0 0 5px rgba(0, 0, 0, 0.15)", fontWeight: "bold" }}
+                                className="edit-profile mt-4"
+                                onClick={toggleStatus}>เเก้ไขโปรไฟล์
                         </Button>
-                        <Button
-                            className="edit-profile mt-4"
-                            style={{ color: "rgb(76,72,255)", background: "#FFF", border: "none", boxShadow: "0 0 5px rgba(0, 0, 0, 0.15)", fontWeight: "bold" }}
-                            onClick={toggleWork}>
-                            สร้างข้อมูลเวลางาน
-                            </Button>
-                        <Button
-                            className="edit-profile mt-4"
-                            style={{ color: "#FFF", background: "red", border: "none", boxShadow: "0 0 5px rgba(0, 0, 0, 0.15)", fontWeight: "bold" }}
-                            onClick={() => userLogoutRequest()}>
-                            ออกจากระบบ
-                        </Button>
+                        </Col>
                     </Row>
                     <Row>
-                        {console.log(work)}
+                        <Col>
+                            <Link to="/calendar">
+                                <Button
+                                    className="edit-profile mt-4"
+                                    style={{ color: "rgb(76,72,255)", background: "#FFF", border: "none", boxShadow: "0 0 5px rgba(0, 0, 0, 0.15)", fontWeight: "bold" }}
+                                >
+                                    สร้างข้อมูลเวลางาน
+                                </Button>
+                            </Link>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Button
+                                className="edit-profile mt-4"
+                                style={{ color: "#FFF", background: "red", border: "none", boxShadow: "0 0 5px rgba(0, 0, 0, 0.15)", fontWeight: "bold" }}
+                                onClick={() => userLogoutRequest()}>
+                                ออกจากระบบ
+                        </Button>
+                        </Col>
                     </Row>
                 </div>
                 <div>
@@ -134,7 +128,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ isAuthenticated, 
                         </ModalFooter>
                     </Modal>
                 </div>
-                <div>
+                {/* <div>
                     <Modal isOpen={modal2} className="mt-5">
                         <ModalHeader>เพิ่มข้อมูลงาน</ModalHeader>
                         <ModalBody>
@@ -156,7 +150,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ isAuthenticated, 
                             <Button color="danger" onClick={() => setModal2(!modal2)}>ยกเลิก</Button>
                         </ModalFooter>
                     </Modal>
-                </div>
+                </div> */}
             </Container>
             <Footer />
         </Fragment>
