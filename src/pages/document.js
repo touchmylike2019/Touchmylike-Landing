@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Header from '../components/Header/Header'
+import Footer from '../components/Footer'
 import {
     Container,
     Row
@@ -12,7 +13,7 @@ import Documents from '../components/documents/Documents'
 export default () => {
     return (
         <Fragment>
-            <Header />
+            {/* <Header /> */}
             <Container>
                 <div className="docs">
                     <h1 style={{ textAlign: "center" }}>เอกสาร</h1>
@@ -23,6 +24,7 @@ export default () => {
                     </Row>
                 </div>
             </Container>
+            <Footer />
         </Fragment>
     )
 }

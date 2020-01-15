@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import { userLoginRequest } from '../store/actions/usersActions'
 import Header from '../components/Header/Header'
 import {
@@ -11,6 +10,7 @@ import {
     Modal, ModalHeader, ModalBody
 } from 'reactstrap'
 import account from '../font-awesome/user-circle-solid.svg'
+import Footer from '../components/Footer'
 
 const mapStateToProps = state => {
     return {
@@ -82,6 +82,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ history, userLogi
                     </Modal>
                 </div>
             </Container>
+            <Footer />
         </Fragment>
     )
 })

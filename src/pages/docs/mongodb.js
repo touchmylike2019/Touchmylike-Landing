@@ -4,11 +4,12 @@ import {
     Container
 } from 'reactstrap'
 import { Link } from 'react-router-dom'
+import Footer from '../../components/Footer'
 
 export default () => {
     return (
         <Fragment>
-            <Header />
+            {/* <Header /> */}
             <Container>
                 <div className="docs">
                     <h2 style={{ textAlign: "center" }}>MongoDB</h2>
@@ -18,6 +19,7 @@ export default () => {
                     </ul>
                 </div>
             </Container>
+            <Footer />
         </Fragment>
     )
 }

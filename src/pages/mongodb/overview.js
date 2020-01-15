@@ -7,11 +7,12 @@ import {
     Col
 } from 'reactstrap'
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import Footer from '../../components/Footer'
 
 export default () => {
     return (
         <Fragment>
-            <Header />
+            {/* <Header /> */}
             <Container>
                 <div className="docs">
                     <h3 style={{ textAlign: "center" }}>เเนะนำ MongoDB เบื้องต้น</h3>
@@ -43,6 +44,7 @@ int main() {
                     <Col><p>Hello World!</p></Col>
                 </Row> */}
             </Container>
+            <Footer />
         </Fragment>
     )
 }

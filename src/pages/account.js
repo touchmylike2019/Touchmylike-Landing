@@ -1,8 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import { userUpdateStatus, showUserStatus } from '../store/actions/usersActions'
-import Header from '../components/Header/Header'
+import { userLogoutRequest } from '../store/actions/usersActions'
+import Footer from '../components/Footer'
 import {
     Container,
     Button,
@@ -14,25 +15,31 @@ import account from '../font-awesome/user-circle-solid.svg'
 
 const mapStateToProps = state => {
     return {
+        isAuthenticated: state.users.isAuthenticated,
         authenticatedUsername: state.users.authenticatedUsername
     }
 }
 const mapDispatchToProps = dispatch => {
     return {
         userUpdateStatus: (id, userStatusDetails) => dispatch(userUpdateStatus(id, userStatusDetails)),
-        showUserStatus: (id) => dispatch(showUserStatus(id))
+        showUserStatus: (id) => dispatch(showUserStatus(id)),
+        userLogoutRequest: () => dispatch(userLogoutRequest())
     }
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(({ authenticatedUsername, userUpdateStatus, showUserStatus }) => {
+export default connect(mapStateToProps, mapDispatchToProps)(({ isAuthenticated, authenticatedUsername, userUpdateStatus, showUserStatus, userLogoutRequest }) => {
 
-    let el_status
+    let el_status, el_option, el_article
     const [modal, setModal] = useState(false)
     const [modal2, setModal2] = useState(false)
-    const toggleStatus = () => setModal(!modal)
-    const toggleWork = () => setModal2(!modal2)
     const [status, setStatus] = useState("")
+    const [work, setWork] = useState([])
+
+    const toggleStatus = () => setModal(!modal)
+    const toggleWork = () => {
+        setModal2(!modal2)
+    }
 
     useEffect(() => {
         const fetctStatus = async () => {
@@ -51,10 +58,32 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ authenticatedUser
             console.error(error)
         }
     }
+    const handleWork = async e => {
+        e.preventDefault()
+        try {
+            await setWork(prevState => {
+                return [
+                    prevState,
+                    {
+                        article: el_article.value,
+                        option: el_option.value
+                    }]
+            })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+    if (isAuthenticated !== true) {
+        return (
+            <Redirect to="/"/>
+        )
+    }
 
     return (
         <Fragment>
-            <Header />
+            {/* <Header /> */}
             <Container>
                 <div className="account">
                     <Row>
@@ -78,9 +107,15 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ authenticatedUser
                             onClick={toggleWork}>
                             สร้างข้อมูลเวลางาน
                             </Button>
+                        <Button
+                            className="edit-profile mt-4"
+                            style={{ color: "#FFF", background: "red", border: "none", boxShadow: "0 0 5px rgba(0, 0, 0, 0.15)", fontWeight: "bold" }}
+                            onClick={() => userLogoutRequest()}>
+                            ออกจากระบบ
+                        </Button>
                     </Row>
                     <Row>
-                        <Link to="/calendar"><Button color="success" className="edit-profile mt-4">ดูงาน</Button></Link>
+                        {console.log(work)}
                     </Row>
                 </div>
                 <div>
@@ -105,11 +140,11 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ authenticatedUser
                         <ModalBody>
                             <Form>
                                 <FormGroup>
-                                    <Input type="text" placeholder="ชื่อเรื่อง" />
+                                    <Input type="text" innerRef={el => el_article = el} placeholder="ชื่อเรื่อง" />
                                 </FormGroup>
                                 <FormGroup>
                                     <Label>การเข้าถึง</Label>
-                                    <Input type="select">
+                                    <Input type="select" innerRef={el => el_option = el}>
                                         <option value="public">สาธารณะ</option>
                                         <option value="private">ส่วนตัว</option>
                                     </Input>
@@ -117,12 +152,13 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ authenticatedUser
                             </Form>
                         </ModalBody>
                         <ModalFooter>
-                            <Button type="submit" color="primary" onClick={toggleWork}>ตกลง</Button>{' '}
-                            <Button color="danger" onClick={toggleWork}>ยกเลิก</Button>
+                            <Button type="submit" color="primary" onClick={handleWork}>ตกลง</Button>{' '}
+                            <Button color="danger" onClick={() => setModal2(!modal2)}>ยกเลิก</Button>
                         </ModalFooter>
                     </Modal>
                 </div>
             </Container>
+            <Footer />
         </Fragment>
     )
 })

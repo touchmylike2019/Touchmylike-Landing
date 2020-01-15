@@ -3,11 +3,12 @@ import Header from '../../components/Header/Header'
 import { Container } from 'reactstrap'
 import bestculling from '../../images/bestculling.jpg'
 import hny from '../../images/hny.jpg'
+import Footer from '../../components/Footer'
 
 export default () => {
     return (
         <Fragment>
-            <Header />
+            {/* <Header /> */}
             <Container>
                 <div className="blog">
                     <h1>Happy New Year 2020</h1>
@@ -31,7 +32,7 @@ export default () => {
                     </p>
                 </div>
             </Container>
-
+            <Footer />
         </Fragment>
     )
 }

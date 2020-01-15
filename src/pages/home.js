@@ -5,8 +5,10 @@ import Header from '../components/Header/Header'
 import {
     Container,
     Button,
-    Alert
+    Alert,
+    Row, Col
 } from 'reactstrap'
+import Footer from '../components/Footer'
 import touchmylike from '../images/home_tml.png'
 
 const mapStateToProps = state => {
@@ -15,10 +17,10 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(({isAuthenticated}) => {
+export default connect(mapStateToProps)(({ isAuthenticated }) => {
     return (
         <Fragment>
-            <Header />
+            {/* <Header /> */}
             <Container className="mt-3">
                 <Alert color="primary">
                     Blog: <Link to="/blog/happy-new-year-2020">Happy New Year 2020 ></Link>
@@ -29,13 +31,14 @@ export default connect(mapStateToProps)(({isAuthenticated}) => {
                     <p className="mt-4">
                         ในโลกปัจจุบันเทคโนโลยีนั้นเปลี่ยนอยู่ทุกวัน ฉะนั้นเเล้วเราจึงต้องพัฒนาทักษะตนเองอยู่เสมอ เพื่อพร้อมต่อการเปลี่ยนเเปลงของโลกยุคใหม่
                     </p>
-                    <Link to={isAuthenticated ? "/documents" : "/login"}><Button color="primary" className="mt-4 p-3" style={{ width: "100%", fontWeight: "bold" }}>เริ่มกันเลย</Button></Link>
+                    {/* <Link to={isAuthenticated ? "/documents" : "/login"}><Button color="primary" className="mt-4 p-3" style={{ width: "100%", fontWeight: "bold" }}>เริ่มกันเลย</Button></Link>
                     <Link to="/about"><Button className="mt-4 mb-5 p-3"
                         style={{ color: "rgb(76,72,255)", width: "100%", background: "#FFF", border: "none", boxShadow: "0 0 5px rgba(0, 0, 0, 0.15)", fontWeight: "bold" }}>
                         Touchmylike คืออะไร?
-                    </Button></Link>
+                    </Button></Link> */}
                 </div>
             </Container>
+            <Footer />
         </Fragment>
     )
 })

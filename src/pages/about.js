@@ -2,11 +2,12 @@ import React, { Fragment } from 'react'
 import Header from '../components/Header/Header'
 import { Container, Row, Col } from 'reactstrap'
 import touchmylike from '../images/about_tml.png'
+import Footer from '../components/Footer'
 
 export default () => {
     return (
         <Fragment>
-            <Header />
+            {/* <Header /> */}
             <Container>
                 <div className="about">
                     <Row>
@@ -19,6 +20,7 @@ export default () => {
                     </Row>
                 </div>
             </Container>
+            <Footer />
         </Fragment>
     )
 }

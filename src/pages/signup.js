@@ -10,6 +10,7 @@ import {
     Modal, ModalHeader, ModalBody
 } from 'reactstrap'
 import account from '../font-awesome/user-circle-solid.svg'
+import Footer from '../components/Footer'
 
 const mapStateToProps = state => {
     return {
@@ -103,6 +104,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ history, userSign
                     </Modal>
                 </div>
             </Container>
+            <Footer />
         </Fragment>
     )
 })

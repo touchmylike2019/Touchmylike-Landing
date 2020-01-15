@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header/Header'
+import Footer from '../components/Footer'
 import { Container } from 'reactstrap'
 import bestculling from '../images/bestculling.jpg'
 
 export default () => {
     return (
         <Fragment>
-            <Header />
+            {/* <Header /> */}
             <Container>
                 <div className="blog">
                     <h1>Happy New Year 2020</h1>
@@ -23,7 +24,7 @@ export default () => {
                     </Link>
                 </div>
             </Container>
-
+            <Footer />
         </Fragment>
     )
 }
