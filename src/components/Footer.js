@@ -38,7 +38,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ isAuthenticated, 
                 <Col><p>หน้าหลัก</p></Col>
                 <Col><p>เอกสาร</p></Col>
                 <Col><p>บทความ</p></Col>
-                <Col><p>บัญชีผู้ใช้</p></Col>
+                <Col><p>ทั่วไป</p></Col>
                 <Col><p>เกี่ยวกับ</p></Col>
             </Row>
         </Fragment>

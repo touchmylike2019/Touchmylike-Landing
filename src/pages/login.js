@@ -56,7 +56,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ history, userLogi
     // }
     return (
         <Fragment>
-            <Header />
+            {/* <Header /> */}
             <Container>
                 <div className="login">
                     <img width="120px" src={account} alt="account" />

@@ -36,10 +36,16 @@
   margin-left: 25px;
 }
 
+.calendar{
+  max-width: 600px;
+  margin: auto;
+}
+
 .blog{
   max-width: 600px;
   margin: auto;
   margin-top: 100px;
+  height: 100%;
 }
 .blog h1{
   font-weight: bold;

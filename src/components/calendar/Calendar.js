@@ -30,8 +30,9 @@ export default () => {
         <Fragment>
             {/* <Header /> */}
             <Container>
-                <div className="blog">
+                <div className="calendar">
                     <FullCalendar
+                        height={600}
                         defaultView="dayGridMonth"
                         plugins={[dayGridPlugin]}
                         eventClick={handleEventClick}
