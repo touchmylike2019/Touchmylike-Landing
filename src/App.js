@@ -14,6 +14,7 @@ import Login from './pages/login'
 import Signup from './pages/signup'
 import Account from './pages/account'
 import Calendar from './pages/calendar'
+import AddTime from './pages/addtime'
 
 export default () => {
     return (
@@ -33,6 +34,7 @@ export default () => {
                 <Route path="/signup" component={Signup} />
                 <Route path="/account" component={Account} />
                 <Route path="/calendar" component={Calendar} />
+                <Route path="/add_time" component={AddTime} />
             </Switch>
         </BrowserRouter>
     )
