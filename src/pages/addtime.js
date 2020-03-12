@@ -1,27 +1,50 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Header from '../components/Header/Header'
 import Footer from '../components/Footer'
-import { Container } from 'reactstrap'
-import bestculling from '../images/bestculling.jpg'
+import {
+    Container, Row,
+    Form, FormGroup, Label, Input,
+    Button
+} from 'reactstrap'
+import DatePicker from 'react-datepicker'
+import "react-datepicker/dist/react-datepicker.css"
 
 export default () => {
+    const [date, setDate] = useState()
+    const handleSubmit = e => {
+        alert("กำลังอัพเดต")
+    }
     return (
         <Fragment>
-            {/* <Header /> */}
             <Container>
-                <div className="blog">
-                    <h1>Happy New Year 2020</h1>
-                    <div className="profile">
-                        <img src={bestculling} className="avatar" />
-                        <span>BESTCULLING | DECEMBER 25, 2019</span>
-                    </div>
-                    <p>
-                        <span>อาจเป็นพวกคุณทุกคนจะรู้สึกถึงความคิดถึงเกี่ยวกับการผ่านไปในปี 2020 ไม่ว่าเราจะพูดถึงชีวิตการทำงานและชีวิตส่วนตัวของคุณ ตอนนี้สิ่งต่างๆส่วนใหญ่เปลี่ยนไป ดังนั้นมาลองใช้ความรู้สึกนั้นกับเราและเข้าสู่ปีใหม่ปี 2020</span>
-                    </p>
-                    <Link to="/blog/happy-new-year-2020">
-                            อ่านเพิ่มเติม
-                    </Link>
+                <div className="login">
+                    <Form className="mt-5" onSubmit={handleSubmit}>
+                        <FormGroup>
+                            <Label>ชื่อเรื่อง</Label>
+                            <Input type="text" required/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Row>
+                                <Label style={{marginLeft: "150px"}}>วันที่เริ่มต้น</Label>
+                            </Row>
+                            <Row>
+                              <DatePicker
+                                className="form-control ml-5"
+                                // name="time"
+                                selected={date}
+                                onChange={date => setDate(date)}
+                                required
+                            />  
+                            </Row>
+                        </FormGroup>
+                        <FormGroup className="mt-4">
+                            <Label>คำอธิบาย</Label>
+                            <Input type="text" />
+                        </FormGroup>
+                        <FormGroup className="mt-4">
+                            <Button>สร้าง</Button>
+                        </FormGroup>
+                    </Form>
                 </div>
             </Container>
             <Footer />
