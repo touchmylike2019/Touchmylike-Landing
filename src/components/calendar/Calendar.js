@@ -32,7 +32,7 @@ export default () => {
             <Container>
                 <div className="calendar">
                     <FullCalendar
-                        height={600}
+                        height={800}
                         defaultView="dayGridMonth"
                         plugins={[dayGridPlugin]}
                         eventClick={handleEventClick}
