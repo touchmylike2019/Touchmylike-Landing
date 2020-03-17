@@ -40,7 +40,7 @@ export default () => {
                     <li>On each post, there can be zero or more comments.</li>
                 </ul>
                 <p>In RDBMS schema, design for above requirements will have minimum three tables.</p>
-                <img src={rdbms} />
+                <img src={rdbms} width="100%"/>
                 <p>While in MongoDB schema, design will have one collection post and the following structure −</p>
                 <SyntaxHighlighter language="javascript" style={vs2015} showLineNumbers>
                     {`{
@@ -68,7 +68,7 @@ export default () => {
 }
     `}
                 </SyntaxHighlighter>
-                <p style={{marginBottom: "20px"}}>So while showing the data, in RDBMS you need to join three tables and in MongoDB, data will be shown from one collection only.</p>
+                <p style={{ marginBottom: "100px" }}>So while showing the data, in RDBMS you need to join three tables and in MongoDB, data will be shown from one collection only.</p>
             </Container>
             <Footer />
         </Fragment>
