@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import {
     Col,
@@ -10,7 +10,7 @@ export default ({ link, location, title, category }) => {
     return (
         <Col xs="12">
             <Link to={link}>
-                <Card style={{ textAlign: "center", color: "#000" }} className="mt-4">
+                <Card style={{ textAlign: "center", color: "#000", marginBottom: "20px" }} className="mt-4">
                     <CardImg top src={location} alt={title} />
                     <CardBody>
                         <CardTitle className="font-weight-bold">{title}</CardTitle>

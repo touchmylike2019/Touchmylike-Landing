@@ -9,7 +9,7 @@ import {
     Button,
     Row, Col,
     Modal, ModalHeader, ModalBody, ModalFooter,
-    Form, FormGroup, Label, Input
+    Form, FormGroup, Input
 } from 'reactstrap'
 import account from '../font-awesome/user-circle-solid.svg'
 

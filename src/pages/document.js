@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import Header from '../components/Header/Header'
 import Footer from '../components/Footer'
 import {
     Container,
@@ -13,13 +12,16 @@ import Documents from '../components/documents/Documents'
 export default () => {
     return (
         <Fragment>
-            {/* <Header /> */}
             <Container>
                 <div className="docs">
                     <h1 style={{ textAlign: "center" }}>เอกสาร</h1>
                     <Row>
                         <Documents link="/documents/mongodb" location={mongodb} title="MongoDB" category="Database" />
+                    </Row>
+                    <Row>
                         <Documents link="/documents/cpp" location={cpp} title="C++" category="Programming Language" />
+                    </Row>
+                    <Row className="mb-5">
                         <Documents link="/documents/sfml" location={sfml} title="SFML" category="Library/Framework" />
                     </Row>
                 </div>

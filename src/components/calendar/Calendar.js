@@ -1,7 +1,6 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
 import {
-    Container,
-    Modal, ModalHeader
+    Container
 } from 'reactstrap'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'

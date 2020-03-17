@@ -2,7 +2,6 @@ import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { userLoginRequest } from '../store/actions/usersActions'
-import Header from '../components/Header/Header'
 import {
     Container,
     Form, FormGroup, Input,
@@ -56,7 +55,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ history, userLogi
     // }
     return (
         <Fragment>
-            {/* <Header /> */}
             <Container>
                 <div className="login">
                     <img width="120px" src={account} alt="account" />

@@ -19,7 +19,8 @@ export default () => {
                         top: "45px",
                         width: "35px",
                         right: "30px",
-                    }} />
+                    }} 
+                    alt="add_time"/>
             </Link>
             <Footer />
         </Fragment>
