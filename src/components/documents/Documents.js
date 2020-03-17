@@ -10,9 +10,9 @@ export default ({ link, location, title, category }) => {
     return (
         <Col xs="12">
             <Link to={link}>
-                <Card style={{ textAlign: "center", color: "#000", marginBottom: "20px" }} className="mt-4">
+                <Card style={{ textAlign: "center", color: "#FFF", marginBottom: "20px" }} className="mt-4">
                     <CardImg top src={location} alt={title} />
-                    <CardBody>
+                    <CardBody style={{background: "#212529"}}>
                         <CardTitle className="font-weight-bold">{title}</CardTitle>
                         <CardText>{category}</CardText>
                     </CardBody>
