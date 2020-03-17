@@ -10,6 +10,7 @@ import SFML from './pages/docs/sfml'
 import MONGODB from './pages/docs/mongodb'
 import Structure from './pages/cpp/structure'
 import Overview from './pages/mongodb/overview'
+import DataModel from './pages/mongodb/datamodel'
 import Login from './pages/login'
 import Signup from './pages/signup'
 import Account from './pages/account'
@@ -27,6 +28,7 @@ export default () => {
                 <Route path="/documents/sfml" component={SFML} />
                 <Route path="/documents/mongodb" component={MONGODB} exact/>
                 <Route path="/documents/mongodb/overview" component={Overview} />
+                <Route path="/documents/mongodb/data_model" component={DataModel} />
                 <Route path="/blog" component={Blog} exact/>
                 <Route path="/blog/happy-new-year-2020" component={HNY2020} />
                 <Route path="/about" component={About} />
