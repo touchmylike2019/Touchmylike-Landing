@@ -11,7 +11,7 @@ import {
     Modal, ModalHeader, ModalBody, ModalFooter,
     Form, FormGroup, Input
 } from 'reactstrap'
-import account from '../font-awesome/user-circle-solid.svg'
+import account from '../images/mask.jpg'
 
 const mapStateToProps = state => {
     return {
@@ -73,7 +73,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ isAuthenticated, 
                 <div className="account">
                     <Row>
                         <Col>
-                            <img width="120px" src={account} alt="account" />
+                            <img style={{borderRadius: "60px"}} width="120px" src={account} alt="account" />
                         </Col>
                         <Col style={{ marginTop: "20px" }}>
                             <h2><b>{authenticatedUsername}</b></h2>

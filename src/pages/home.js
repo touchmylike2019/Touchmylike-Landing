@@ -7,6 +7,7 @@ import {
 } from 'reactstrap'
 import Footer from '../components/Footer'
 import touchmylike from '../images/home_tml.png'
+import virus from '../images/fight-virus.jpg'
 
 const mapStateToProps = state => {
     return {
@@ -22,8 +23,9 @@ export default connect(mapStateToProps)(() => {
                     Blog: <Link to="/blog/happy-new-year-2020">Happy New Year 2020 ></Link>
                 </Alert>
                 <div className="layer mt-4">
-                    <h1 style={{ fontWeight: "bold" }}>Leaning skill technology</h1>
-                    <img width="100%" src={touchmylike} alt="touchmylike" />
+                    <h1 style={{ fontWeight: "bold" }}>Touchmylike</h1>
+                    <h4 style={{ fontWeight: "bold" }}>Leaning skill technology</h4>
+                    <img width="100%" src={virus} alt="touchmylike" />
                     <p className="mt-4">
                         ในโลกปัจจุบันเทคโนโลยีนั้นเปลี่ยนอยู่ทุกวัน ฉะนั้นเเล้วเราจึงต้องพัฒนาทักษะตนเองอยู่เสมอ เพื่อพร้อมต่อการเปลี่ยนเเปลงของโลกยุคใหม่
                     </p>
