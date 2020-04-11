@@ -8,7 +8,7 @@ import {
     Button,
     Modal, ModalHeader, ModalBody
 } from 'reactstrap'
-import account from '../font-awesome/user-circle-solid.svg'
+import account from '../images/mask.jpg'
 import Footer from '../components/Footer'
 
 const mapStateToProps = state => {
@@ -70,7 +70,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ history, userSign
         <Fragment>
             <Container>
                 <div className="login">
-                    <img width="120px" src={account} alt="account" />
+                    <img style={{borderRadius: "60px"}} width="120px" src={account} alt="account" />
                     <Form className="mt-5" onSubmit={handleForm}>
                         <FormGroup>
                             <Input type="text" placeholder="name" innerRef={el => el_name = el} />
@@ -88,7 +88,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(({ history, userSign
                             <Input type="password" placeholder="confirm password" innerRef={el => el_confirm_password = el} />
                         </FormGroup>
                         <FormGroup className="mt-4">
-                            <Button>สมัครสมาชิก</Button>
+                            <Button color="info">สมัครสมาชิก</Button>
                         </FormGroup>
                     </Form>
                     <p className="mt-5">
