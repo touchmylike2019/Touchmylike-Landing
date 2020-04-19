@@ -9,7 +9,7 @@ export default () => {
     return (
         <Fragment>
             <Calendar />
-            <Link to="add_time">
+            {/* <Link to="add_time">
                 <img
                     src={plus}
                     width="30px"
@@ -21,7 +21,7 @@ export default () => {
                         right: "30px",
                     }} 
                     alt="add_time"/>
-            </Link>
+            </Link> */}
             <Footer />
         </Fragment>
     )

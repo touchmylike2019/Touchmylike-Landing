@@ -91,6 +91,9 @@
 .account{
   margin-top: 100px;
 }
+.react-datepicker-wrapper{
+  width: 100%;
+}
 @media (max-width: 400px) {
   .layer {
     text-align: center;
